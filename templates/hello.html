@@ -1,0 +1,27 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!doctype html>
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+
+{% if message is none %}
+  <p>You should <a href='/register'>register!</a></p>
+  <br>
+  <p>Already a registered user? <a href='/login'>Login</a></p>
+{% else %}
+  <p> Go to <a href='/myprofile'>profile?</a></p>
+{% endif %}
+
+<ul>
+<li><a href='/upload'>Upload a Photo</a> </li>
+<li><a href='/myfriends'>My Friends</a> </li>
+<li><a href='/myalbums'>My Albums</a> </li>
+<li><a href='/albumcreate'>Create Album</a> </li> 
+<li><a href='/logout'>Logout</a></li>
+<li><a href='/home'>Home</a></li>
+</ul>
+

@@ -1,0 +1,18 @@
+<!-- author Kailen Santos(kjsantos@bu.edu) -->
+<h2>Select a Friend to View Profile</h2>
+<br>
+  <select name="user" form="userform">
+      {% for friend in friends %}
+        <option value="{{friend[0]}}">{{friend[1]}}</option>
+      {% endfor %}
+  <br>
+  </select>
+  <form method="post" enctype="multipart/form-data" action="/myfriends" id = "userform">
+        <input type="submit"/>
+  </form>
+  <head><a href ='/addfriend'>Add Friend</a>?</head>
+
+
+<ul>
+<li><a href='/home'>Home</a></li>
+</ul>

@@ -1,0 +1,35 @@
+<!-- author kailen santos kjsantos@bu.edu -->
+<!doctype html>
+{% if message %}
+    {{message}}
+{% endif %}
+{% if photos %}
+<head>
+    <title>Photos in {{aname}}</title>
+</head>
+    <body>
+        {% for photo in photos %}
+            <li><img src='data:image/png;base64, {{photo[0]}}'/></li>
+            <p>{{photo[2]}}<p>
+            <b>
+            <select name="photo" form="commentform">
+                <option value="{{photo[1]}}">View Comments</option>
+            </select>
+            <form method="post" enctype="multipart/form-data" action="/album" id = "commentform">
+            <input type="submit"/>
+            </form>
+            <br>
+            <form action="/post_comment" method="post">
+            <textarea placeholder="Enter your comment" name="comment" cols="50" rows="4"></textarea>
+            <input type="hidden" name="photo" value ="{{photo[1]}}" readonly>
+            <input type="submit" value="Submit">
+            </form>
+            
+        {% endfor %}
+    </body>
+{% endif %}
+
+
+<ul>
+<li><a href='/home'>Home</a></li>
+</ul>

@@ -1,0 +1,11 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!doctype html>
+<h2>Welcome to Photoshare!</h2>
+
+{% if message is none %}
+  <p>You should <a href='/register'>register!</a></p>
+  <br>
+  <p>Already a registered user? <a href='/login'>Login</a></p>
+{% else %}
+  <p> Go to <a href='/myprofile'>profile?</a></p>
+{% endif %}

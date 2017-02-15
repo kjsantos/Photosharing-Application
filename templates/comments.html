@@ -1,0 +1,25 @@
+<!-- author kailen santos kjsantos@bu.edu -->
+<!doctype html>
+{% if message %}
+    {{message}}
+{% endif %}
+{% if comments %}
+<head>
+    <title>Photo Comments</title>
+</head>
+    <body>
+        {% for comment in comments %}
+            
+            <li><b>{{getName(comment[0])}}</b> {{comment[2]}}
+            <p>{{comment[1]}}<p>
+            </li>
+        {% endfor %}
+    </body>
+{% else %}
+<h1>Oops! No comments here.</h1>
+{% endif %}
+
+
+<ul>
+<li><a href='/home'>Home</a></li>
+</ul>
